@@ -11,12 +11,14 @@ function preload(){
   pink_balloonImage = loadImage("pink_balloon0.png");
   blue_balloonImage = loadImage("blue_balloon0.png");
 
-  red_balloonImage = loadImage("red_balloon0.png");
-  red_balloonImage = loadImage("redballoon0.png");
-  red_balloonImage = loadImage("red_balloon0");
-  red_balloonImage = loadImage("red_balloon0.png");
+  // red_balloonImage = loadImage("red_balloon0.png");
+  // red_balloonImage = loadImage("redballoon0.png");
+  // red_balloonImage = loadImage("red_balloon0");
+  //red_balloonImage = loadImage("red_balloon0.png");
   
 }
+
+
 
 function setup() {
   createCanvas(400, 400);
@@ -36,13 +38,14 @@ function setup() {
 
 function draw() {
  background(0);
-  
+  // moving ground
     scene.velocityX = -3 
 
     if (scene.x < 0){
       scene.x = scene.width/2;
     }
   
+  //moving bow
   bow.y = World.mouseY
   
    // release arrow when space key is pressed
@@ -50,11 +53,13 @@ function draw() {
     createArrow();
     
   }
+   
+  //creating continous enemies
 
-  var select_balloon = Math.round(random(1,4));
-  var select_balloon = random(1,4);
-  var select_balloon = Math.round(random());
-  var select_balloon = Math.round(random(1,4,2));
+  // var select_balloon = Math.round(random(1,4));
+  // var select_balloon = random(1,4);
+  // var select_balloon = Math.round(random());
+  // var select_balloon = Math.round(random(1,4,2));
   
   if (World.frameCount % 100 == 0) {
     if (select_balloon == 1) {
@@ -72,7 +77,9 @@ function draw() {
   text("Score: "+ score, 300,50);
 }
 
-function createArrow() {
+
+// Creating  arrows for bow
+ function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
   arrow.x = 360;
@@ -82,37 +89,37 @@ function createArrow() {
   arrow.scale = 0.3;
 }
 
-function redBalloon() {
-   var red = createSprite(0,50, 10, 10);
-   red.addImage(red_balloonImage);
-   red.velocityX = 3;
-   red.lifetime = 150;
-   red.scale = 0.1;
- }
+// function redBalloon() {
+//   var red = createSprite(0,50, 10, 10);
+//   red.addImage(red_balloonImage);
+//   red.velocityX = 3;
+//   red.lifetime = 150;
+//   red.scale = 0.1;
+// }
 
-function redBalloon() {
-  var red = createSprite(,Math.round(random(20, 370)),50, 10, 10);
-  red.addImage(red_balloonImage);
-  red.velocityX = 3;
-  red.lifetime = 150;
-  red.scale = 0.1;
- }
+// function redBalloon() {
+//   var red = createSprite(,Math.round(random(20, 370)),50, 10, 10);
+//   red.addImage(red_balloonImage);
+//   red.velocityX = 3;
+//   red.lifetime = 150;
+//   red.scale = 0.1;
+// }
 
- function redBalloon() {
-   var red = createSprite(0,Math.round(random(20, 370)), 10, 10);
-   red.addImage(red_balloonImage);
-   red.velocityX = 3;
-   red.lifetime = 150;
-   red.scale = 0.1;
- }
+// function redBalloon() {
+//   var red = createSprite(0,Math.round(random(20, 370)), 10, 10);
+//   red.addImage(red_balloonImage);
+//   red.velocityX = 3;
+//   red.lifetime = 150;
+//   red.scale = 0.1;
+// }
 
-function redBalloon() {
-  var red = createSprite(0, 10, Math.round(random(20, 370)) , 10);
-  red.addImage(red_balloonImage);
-  red.velocityX = 3;
-  red.lifetime = 150;
-  red.scale = 0.1;
- }
+// function redBalloon() {
+//   var red = createSprite(0, 10, Math.round(random(20, 370)) , 10);
+//   red.addImage(red_balloonImage);
+//   red.velocityX = 3;
+//   red.lifetime = 150;
+//   red.scale = 0.1;
+// }
 
 function blueBalloon() {
   var blue = createSprite(0,Math.round(random(20, 370)), 10, 10);
